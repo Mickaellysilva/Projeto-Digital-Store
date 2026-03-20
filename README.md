@@ -50,3 +50,14 @@ Acesse http://localhost:5173 no seu navegador.
 
 ### 🎨 Design
 O layout foi baseado na documentação oficial e no design do Figma proposto pelo programa Geração Tech.
+
+## 👩‍💻 Autoria
+
+Desenvolvido por Kássia, Mickaelly e Tatiana
+
+- 💼 Projeto acadêmico - Geração Tech  
+- 🚀 Foco em desenvolvimento Back-end  
+
+
+Desenvolvido por Kássia, Mickaelly e Tatiana
+© 2026 Todos os direitos reservados.
