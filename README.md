@@ -1,16 +1,52 @@
-# React + Vite
+# 🛍️ Digital Store - Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Currently, two official plugins are available:
+Este é o projeto de interface da **Digital Store**, uma plataforma de e-commerce moderna e responsiva. O objetivo principal é oferecer uma experiência de compra fluida, com foco em performance e design fiel ao protótipo do Figma.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Página de Produtos**: Listagem dinâmica com filtros.
+* **Carrinho de Compras**: Gestão de itens em tempo real.
+* **Busca Inteligente**: Filtro de produtos por nome ou categoria.
+* **Design Responsivo**: Totalmente adaptado para dispositivos móveis e desktop.
+* **Checkout**: Fluxo de finalização de compra intuitivo.
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React.js**: Biblioteca principal para construção de componentes.
+* **Tailwind CSS**: Estilização baseada em utilitários para agilidade.
+* **Vite**: Ferramenta de build extremamente rápida.
+* **React Router**: Gerenciamento de rotas da aplicação.
+* **Context API**: Para gerenciamento de estado global (como o carrinho).
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### 1. Clonar o repositório
+```bash
+git clone [https://github.com/Mickaellysilva/Projeto-Digital-Store.git](https://github.com/Mickaellysilva/Projeto-Digital-Store.git)
+```
+
+### 2. Instalar as dependências
+Bash
+npm install
+### 3. Configurar a conexão com o Back-end
+Crie um arquivo .env na raiz e adicione a URL da sua API:
+
+Snippet de código
+VITE_API_URL=http://localhost:3000
+
+
+### 4. Rodar o projeto
+Bash
+npm run dev
+Acesse http://localhost:5173 no seu navegador.
+
+### 🎨 Design
+O layout foi baseado na documentação oficial e no design do Figma proposto pelo programa Geração Tech.
