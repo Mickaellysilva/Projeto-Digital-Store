@@ -8,7 +8,7 @@ Este é o projeto de interface da **Digital Store**, uma plataforma de e-commerc
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 * **Página de Produtos**: Listagem dinâmica com filtros.
 * **Carrinho de Compras**: Gestão de itens em tempo real.
@@ -16,7 +16,7 @@ Este é o projeto de interface da **Digital Store**, uma plataforma de e-commerc
 * **Design Responsivo**: Totalmente adaptado para dispositivos móveis e desktop.
 * **Checkout**: Fluxo de finalização de compra intuitivo.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **React.js**: Biblioteca principal para construção de componentes.
 * **Tailwind CSS**: Estilização baseada em utilitários para agilidade.
@@ -26,7 +26,7 @@ Este é o projeto de interface da **Digital Store**, uma plataforma de e-commerc
 
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Clonar o repositório
 ```bash
@@ -48,15 +48,15 @@ Bash
 npm run dev
 Acesse http://localhost:5173 no seu navegador.
 
-### 🎨 Design
+###  Design
 O layout foi baseado na documentação oficial e no design do Figma proposto pelo programa Geração Tech.
 
-## 👩‍💻 Autoria
+##  Autoria
 
-Desenvolvido por Kássia, Mickaelly e Tatiana
+Kássia, Mickaelly da Silva Costa e  Tatiana dos Santos Lima
 
-- 💼 Projeto acadêmico - Geração Tech  
-- 🚀 Foco em desenvolvimento Back-end  
+- Projeto acadêmico - Geração Tech  
+- Foco em desenvolvimento Back-end  
 
 
 Desenvolvido por Kássia, Mickaelly e Tatiana
