@@ -53,11 +53,9 @@ O layout foi baseado na documentação oficial e no design do Figma proposto pel
 
 ##  Autoria
 
-Kássia, Mickaelly da Silva Costa e  Tatiana dos Santos Lima
-
 - Projeto acadêmico - Geração Tech  
-- Foco em desenvolvimento Back-end  
+- Foco em desenvolvimento front-end 
 
 
-Desenvolvido por Kássia, Mickaelly e Tatiana
+Desenvolvido por Kássia Moreira Santos, Mickaelly da Silva Costa e Tatiana dos Santos Lima
 © 2026 Todos os direitos reservados.
