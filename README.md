@@ -25,29 +25,26 @@ A **Digital Store** é uma aplicação web que simula uma loja virtual completa,
 
 ## Estrutura de Pastas
 
+```text
 src/
-├── components/
-│ ├── Header/
-│ ├── Footer/
-│ ├── Logo/
-│ ├── ProductListing/
-│ ├── ProductCard/
-│ ├── ProductOptions/
-│ ├── BuyBox/
-│ ├── Section/
-│ ├── FilterGroup/
-│ └── Gallery/
-│
-├── pages/
-│ ├── HomePage/
-│ ├── ProductListingPage/
-│ └── ProductViewPage/
-│
-├── assets/
-├── App.js
-└── index.js
+├── components/         
+│   ├── AbaProdutos/    
+│   ├── HomePage/        
+│   └── ...
+├── pages/              
+│   ├── homePage.jsx
+│   ├── productListingPage.jsx
+│   ├── productViewPage.jsx
+│   ├── login.jsx
+│   └── ...
+├── data/               
+├── contexts/           
+├── assets/              
+├── App.jsx              
+└── main.jsx            
 
-## 🎨 Paleta de Cores
+```
+## Paleta de Cores
 
 ### Cores principais
 
