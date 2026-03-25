@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🛍️ Digital Store - Front-end
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -60,7 +60,7 @@ O layout foi baseado na documentação oficial e no design do Figma proposto pel
 
 Desenvolvido por Kássia Moreira Santos, Mickaelly da Silva Costa e Tatiana dos Santos Lima
 © 2026 Todos os direitos reservados.
-=======
+
 # 👟 Drip Store
 
 Link do deploy: https://drip-store-digital.vercel.app/
@@ -123,4 +123,4 @@ GitHub Pages (com adaptações)
 Este projeto utiliza TailwindCSS para estilização rápida, responsiva e moderna. Todos os componentes são mobile-first e adaptam-se dinamicamente ao tamanho da tela.
 
 Feito com 💗 usando React + Tailwind por *Nazaré, Jacque e Adriana*
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+ 

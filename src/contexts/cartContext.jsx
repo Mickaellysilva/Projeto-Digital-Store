@@ -1,17 +1,25 @@
-<<<<<<< HEAD
 /* eslint-disable react-refresh/only-export-components */
-=======
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
 import { createContext, useContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext();
 
-export const useCart = () => useContext(CartContext);
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error('useCart deve ser usado dentro de um CartProvider');
+  }
+  return context;
+};
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {
-    const stored = localStorage.getItem('cartItems');
-    return stored ? JSON.parse(stored) : [];
+    try {
+      const stored = localStorage.getItem('cartItems');
+      return stored ? JSON.parse(stored) : [];
+    } catch (error) {
+      console.error("Erro ao carregar o carrinho:", error);
+      return [];
+    }
   });
 
   useEffect(() => {
@@ -19,7 +27,12 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
   const addToCart = (product) => {
-    setCartItems((prev) => [...prev, product]);
+    // Evita duplicados por garantia
+    setCartItems((prev) => {
+      const exists = prev.find(item => item.id === product.id);
+      if (exists) return prev; 
+      return [...prev, product];
+    });
   };
 
   const removeFromCart = (id) => {
@@ -53,13 +66,4 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
-<<<<<<< HEAD
 };
-=======
-};
-
-
-
-
-
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)

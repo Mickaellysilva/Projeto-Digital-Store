@@ -47,9 +47,7 @@ const ProductListing = ({ products }) => {
   );
 };
 
-<<<<<<< HEAD
-export default ProductListing;
-=======
+
 export default ProductListing;
 
 
@@ -62,4 +60,6 @@ export default ProductListing;
 
 
 
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+
+
+ 

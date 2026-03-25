@@ -14,8 +14,5 @@ const Layout = () => {
   );
 };
 
-<<<<<<< HEAD
+
 export default Layout;
-=======
-export default Layout;
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)

@@ -1,16 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-import ProductCard from './AbaProdutos/productCardList'; 
-
-const RelatedProducts = ({ currentProduct, allProducts }) => {
-=======
-// ATENÇÃO: Verifique se este caminho está correto para o seu card de produto.
-// Seu arquivo se chama 'ProductCardList', mas ele funciona como um único 'ProductCard'.
 import ProductCard from './AbaProdutos/productCardList'; 
 
 const RelatedProducts = ({ currentProduct, allProducts }) => {
   // Filtra até 4 produtos da mesma categoria, excluindo o produto atual
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
   const related = allProducts.filter(p => 
     p.category === currentProduct.category && p.id !== currentProduct.id
   ).slice(0, 4); 
@@ -27,23 +20,15 @@ const RelatedProducts = ({ currentProduct, allProducts }) => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {related.map(product => (
-<<<<<<< HEAD
-=======
-          // Passando todas as props que o seu ProductCardList espera
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
           <ProductCard 
             key={product.id} 
             id={product.id}
             image={product.image}
-            name={product.name}
+            name={product.name || product.title}
             category={product.category}
             price={product.price}
             priceDiscount={product.priceDiscount}
-<<<<<<< HEAD
             fullProduct={product} 
-=======
-            fullProduct={product} // Seu card espera o produto completo
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
           />
         ))}
       </div>

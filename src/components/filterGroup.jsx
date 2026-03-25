@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+
+
+ 
 const FilterGroup = ({ title, inputType, options }) => {
   return (
     <div className="mb-4">
@@ -24,8 +24,8 @@ const FilterGroup = ({ title, inputType, options }) => {
   );
 };
 
-<<<<<<< HEAD
+
 export default FilterGroup;
-=======
-export default FilterGroup;
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+
+
+ 

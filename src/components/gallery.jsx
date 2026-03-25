@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
 import { useState } from 'react';
 import arrowLeft from '../assets/arrow-left.svg';
 import arrowRight from '../assets/arrow-right.svg';
@@ -9,12 +5,9 @@ import arrowRight from '../assets/arrow-right.svg';
 const Gallery = ({ images, width = '100%', height = 'auto', radius = 'xl', showThumbs }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-<<<<<<< HEAD
   // Fallback para caso images seja undefined ou vazio
   if (!images || images.length === 0) return null;
 
-=======
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
   const handleNext = () => {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -28,111 +21,63 @@ const Gallery = ({ images, width = '100%', height = 'auto', radius = 'xl', showT
   };
 
   return (
-<<<<<<< HEAD
-    /* CORREÇÃO: Aplicando o width recebido via props no style */
-    <div 
-      className="relative mx-auto" 
-      style={{ width: width, height: height }}
-    >
+    <div className="relative mx-auto" style={{ width: width }}>
+      {/* Container Principal da Imagem */}
       <div 
-        className={`w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden`}
-        style={{ borderRadius: radius === 'xl' ? '0.75rem' : radius }} // Garante que o radius funcione mesmo se for um valor CSS puro
+        className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px] overflow-hidden"
+        style={{ borderRadius: radius === 'xl' ? '0.75rem' : radius }}
       >
-=======
-    <div className="relative w-full max-w-6xl mx-auto" style={{ height }}>
-
-      <div className={`w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px] rounded-${radius} overflow-hidden`}>
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
         <img
           src={images[currentIndex].src}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover object-center"
         />
+
+        {/* Botão Anterior */}
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg disabled:opacity-30 z-10 transition-all hover:scale-110"
+        >
+          <img src={arrowLeft} alt="Anterior" className="w-6 h-6" />
+        </button>
+
+        {/* Próximo Botão */}
+        <button
+          onClick={handleNext}
+          disabled={currentIndex === images.length - 1}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg disabled:opacity-30 z-10 transition-all hover:scale-110"
+        >
+          <img src={arrowRight} alt="Próxima" className="w-6 h-6" />
+        </button>
+
+        {/* Indicadores (Dots) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                currentIndex === index ? 'bg-pink-600 scale-125' : 'bg-gray-300/80'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
-<<<<<<< HEAD
-      {/* Botão Anterior */}
-      <button
-        onClick={handlePrev}
-        disabled={currentIndex === 0}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-30 z-10 transition-opacity"
-        aria-label="Imagem anterior"
-      >
-        <img src={arrowLeft} alt="Anterior" className="w-6 h-6" />
-      </button>
-
-      {/* Próximo Botão */}
-      <button
-        onClick={handleNext}
-        disabled={currentIndex === images.length - 1}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-30 z-10 transition-opacity"
-        aria-label="Próxima imagem"
-      >
-        <img src={arrowRight} alt="Próxima" className="w-6 h-6" />
-      </button>
-
-      {/* Indicadores (Dots) */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
-=======
-      <button
-        onClick={handlePrev}
-        disabled={currentIndex === 0}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-30"
-        aria-label="Imagem anterior"
-      >
-        <img src={arrowLeft} alt="Anterior" />
-      </button>
-
-      <button
-        onClick={handleNext}
-        disabled={currentIndex === images.length - 1}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow disabled:opacity-30"
-        aria-label="Próxima imagem"
-      >
-        <img src={arrowRight} alt="Próxima" />
-      </button>
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-<<<<<<< HEAD
-              currentIndex === index ? 'bg-pink-600 scale-110' : 'bg-gray-300/80'
-=======
-              currentIndex === index ? 'bg-pink-600 scale-110' : 'bg-gray-300'
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
-            }`}
-            aria-label={`Ir para slide ${index + 1}`}
-          />
-        ))}
-      </div>
-
-<<<<<<< HEAD
       {/* Miniaturas (Thumbnails) */}
-=======
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
       {showThumbs && (
-        <div className="flex justify-center mt-4 gap-2 flex-wrap">
+        <div className="flex justify-center mt-4 gap-4 flex-wrap">
           {images.map((image, index) => (
             <img
               key={index}
               src={image.src}
               alt={`Miniatura ${index + 1}`}
-              className={`w-20 h-16 object-cover border-2 cursor-pointer transition ${
-<<<<<<< HEAD
-                currentIndex === index ? 'border-pink-600' : 'border-transparent hover:border-gray-200'
+              className={`w-24 h-20 object-cover cursor-pointer transition-all border-2 ${
+                currentIndex === index ? 'border-pink-600' : 'border-transparent hover:border-gray-300'
               }`}
+              style={{ borderRadius: radius === 'xl' ? '0.5rem' : radius }}
               onClick={() => setCurrentIndex(index)}
-              style={{ borderRadius: radius === 'xl' ? '0.75rem' : radius }}
-=======
-                currentIndex === index ? 'border-pink-600' : 'border-transparent'
-              } rounded-${radius}`}
-              onClick={() => setCurrentIndex(index)}
-              style={{ borderRadius: radius }}
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
             />
           ))}
         </div>
@@ -141,9 +86,4 @@ const Gallery = ({ images, width = '100%', height = 'auto', radius = 'xl', showT
   );
 };
 
-<<<<<<< HEAD
 export default Gallery;
-=======
-export default Gallery;
-
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)

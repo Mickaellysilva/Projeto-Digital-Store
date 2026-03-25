@@ -93,8 +93,5 @@ const ProductCardList = ({ id, image, name, category, price, priceDiscount, full
   );
 };
 
-<<<<<<< HEAD
+
 export default ProductCardList;
-=======
-export default ProductCardList;
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)

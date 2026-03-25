@@ -163,8 +163,5 @@ const MeusPedidosPage = () => {
 };
 
 export default MeusPedidosPage;
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)

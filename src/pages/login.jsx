@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook, FaMicrosoft } from 'react-icons/fa';
-<<<<<<< HEAD
 import { api, setAuthToken } from '../services/api'; 
 
 const Login = () => {
@@ -15,22 +14,8 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     
-=======
-import { api, setAuthToken } from '../services/api'; // NOVO: Importa a nossa API e a função de token
-
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(''); // ALTERADO: 'senha' para 'password' para consistência
-  const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
-
-  // ALTERADO: Substituímos toda a função de login
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    
-    // O objeto enviado para a API deve ter as chaves 'email' e 'password'
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
     try {
+      // O objeto enviado para a API deve ter as chaves 'email' e 'password'
       const response = await api.post('/usuario/token', {
         email,
         password 
@@ -49,7 +34,6 @@ const Login = () => {
 
     } catch (error) {
       console.error("Erro no login:", error);
-
       // Pega a mensagem de erro específica do backend, se existir
       const errorMessage = error.response?.data?.error || "Email ou senha incorretos. Tente novamente.";
       alert(errorMessage);
@@ -68,7 +52,7 @@ const Login = () => {
               </h2>
               <p className="mt-2 text-sm text-gray-600">
                 Novo cliente? Então registre-se{' '}
-                <Link to="/register" className="font-semibold text-pink-600 hover:underline">
+                <Link to="/cadastro" className="font-semibold text-pink-600 hover:underline">
                   aqui
                 </Link>
               </p>
@@ -91,12 +75,12 @@ const Login = () => {
                   Senha *
                 </label>
                 <input
-                  id="password" type={showPassword ? 'text' : 'password'} required value={password} onChange={(e) => setPassword(e.target.value)} // ALTERADO: usa o estado 'password'
+                  id="password" type={showPassword ? 'text' : 'password'} required value={password} onChange={(e) => setPassword(e.target.value)}
                   className="block w-full px-3 py-2.5 bg-gray-100 border-none rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-pink-500 sm:text-sm"
                   placeholder="Insira sua senha"
                 />
                 <button type="button" onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 top-7 pr-3 flex items-center text-gray-500 hover:text-gray-700">
+                  className="absolute inset-y-0 right-0 top-8 pr-3 flex items-center text-gray-500 hover:text-gray-700">
                   {showPassword ? <FiEyeOff /> : <FiEye />}
                 </button>
               </div>

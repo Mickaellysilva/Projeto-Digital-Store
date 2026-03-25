@@ -90,9 +90,7 @@ const ProductCard = ({ product = {} }) => {
   );
 };
 
-<<<<<<< HEAD
-export default ProductCard;
-=======
+
 export default ProductCard;
 
 
@@ -103,4 +101,4 @@ export default ProductCard;
 
 
 
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+ 

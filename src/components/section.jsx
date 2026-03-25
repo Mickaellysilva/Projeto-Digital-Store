@@ -50,8 +50,7 @@ const Section = ({
   );
 };
 
-<<<<<<< HEAD
+
 export default Section;
-=======
-export default Section;
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+
+ 

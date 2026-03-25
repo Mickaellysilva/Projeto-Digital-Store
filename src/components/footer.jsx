@@ -57,10 +57,5 @@ const Footer = () => {
   );
 };
 
-<<<<<<< HEAD
-export default Footer;
-=======
-export default Footer;
 
-
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+export default Footer;

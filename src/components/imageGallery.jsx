@@ -1,21 +1,14 @@
-<<<<<<< HEAD
-import { useState } from 'react';
-=======
-import { useState, useEffect } from 'react';
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+import React, { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const ImageGallery = ({ images }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-<<<<<<< HEAD
-  const [prevImages, setPrevImages] = useState(images);
 
-  // CORREÇÃO: Se as imagens mudaram, resetamos o índice diretamente na renderização.
-  // Isso evita o erro de "cascading renders" do useEffect.
-  if (images !== prevImages) {
-    setPrevImages(images);
+  // Efeito para resetar a imagem selecionada para a primeira 
+  // sempre que o conjunto de imagens mudar (ex: mudar de produto)
+  useEffect(() => {
     setSelectedIndex(0);
-  }
+  }, [images]);
 
   if (!images || images.length === 0) {
     return (
@@ -23,16 +16,6 @@ const ImageGallery = ({ images }) => {
         Sem imagem
       </div>
     );
-=======
-
-  // Efeito para resetar a imagem selecionada se as imagens do produto mudarem
-  useEffect(() => {
-    setSelectedIndex(0);
-  }, [images]);
-
-  if (!images || images.length === 0) {
-    return <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center">Sem imagem</div>;
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
   }
 
   const selectNext = () => setSelectedIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
@@ -47,9 +30,8 @@ const ImageGallery = ({ images }) => {
           alt="Imagem principal do produto"
           className="w-full h-full object-contain transition-opacity duration-300"
         />
-<<<<<<< HEAD
         
-        {/* Setas (apenas se houver mais de uma imagem) */}
+        {/* Setas de navegação (aparecem no hover se houver > 1 imagem) */}
         {images.length > 1 && (
           <>
             <button 
@@ -90,31 +72,6 @@ const ImageGallery = ({ images }) => {
           ))}
         </div>
       )}
-=======
-        {/* Setas que aparecem no hover */}
-        <button onClick={selectPrev} className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/60 p-2 rounded-full text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none">
-          <FiChevronLeft size={24} />
-        </button>
-        <button onClick={selectNext} className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/60 p-2 rounded-full text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity focus:outline-none">
-          <FiChevronRight size={24} />
-        </button>
-      </div>
-
-      {/* Miniaturas Selecionáveis */}
-      <div className="grid grid-cols-5 gap-3">
-        {images.map((imgSrc, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedIndex(index)}
-            className={`aspect-square w-full bg-gray-100 rounded-md overflow-hidden border-2 transition-all ${
-              selectedIndex === index ? 'border-pink-500 shadow-md' : 'border-transparent hover:border-gray-300'
-            }`}
-          >
-            <img src={imgSrc} alt={`Miniatura ${index + 1}`} className="w-full h-full object-contain" />
-          </button>
-        ))}
-      </div>
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
     </div>
   );
 };

@@ -287,8 +287,7 @@ export const products = [
     colors: ["#000000", "#FFFFFF", "#0077b6"],
     relatedProducts: [11, 2]
   }
-<<<<<<< HEAD
+
 ];
-=======
-];
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+
+

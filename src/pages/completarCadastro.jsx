@@ -1,9 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-<<<<<<< HEAD
-=======
-// MUDANÇA 1: Importar os ícones de olho
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 const InputField = ({ label, id, type = 'text', value, onChange, placeholder, required = true, disabled = false }) => (
@@ -34,18 +30,10 @@ const CompletarCadastro = () => {
     cidade: '',
     cep: '',
     complemento: '',
-<<<<<<< HEAD
-=======
-    // MUDANÇA 2: Adicionar a senha ao estado do formulário
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
     password: '', 
     receberEmails: true,
   });
-  
-<<<<<<< HEAD
-=======
-  // MUDANÇA 3: Estado para controlar a visibilidade da senha nesta página
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+
   const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
@@ -69,13 +57,11 @@ const CompletarCadastro = () => {
           <div className="space-y-4">
             <h2 className="text-lg font-semibold text-gray-800 border-b pb-2">Informações Pessoais</h2>
             <InputField label="Nome Completo" id="nome" value={formData.nome} onChange={handleChange} disabled />
-            {/* MUDANÇA 4: CPF agora é opcional (required={false}) */}
             <InputField label="CPF" id="cpf" value={formData.cpf} onChange={handleChange} placeholder="Insira seu CPF (opcional)" required={false} />
             <InputField label="E-mail" id="email" type="email" value={formData.email} onChange={handleChange} disabled />
             <InputField label="Celular" id="celular" type="tel" value={formData.celular} onChange={handleChange} placeholder="Insira seu celular" />
           </div>
 
-          {/* MUDANÇA 5: Adicionada seção de senha para conferência/edição */}
           <div className="space-y-4">
             <h2 className="text-lg font-semibold text-gray-800 border-b pb-2">Segurança</h2>
             <div className="relative">
@@ -88,7 +74,7 @@ const CompletarCadastro = () => {
                 />
                 <button
                     type="button" onClick={() => setShowPassword(!showPassword)}
-                    className="absolute inset-y-0 right-0 top-6 pr-3 flex items-center text-gray-500 hover:text-gray-700"
+                    className="absolute inset-y-0 right-0 top-8 pr-3 flex items-center text-gray-500 hover:text-gray-700"
                     aria-label="Mostrar ou ocultar senha">
                     {showPassword ? <FiEyeOff /> : <FiEye />}
                 </button>

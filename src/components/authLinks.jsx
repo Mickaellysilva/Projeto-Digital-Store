@@ -17,9 +17,5 @@ const AuthLinks = () => {
   );
 };
 
-<<<<<<< HEAD
-export default AuthLinks;
-=======
-export default AuthLinks;
 
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+export default AuthLinks;

@@ -47,9 +47,9 @@ const BuyBox = ({
   );
 };
 
-<<<<<<< HEAD
-export default BuyBox;
-=======
+
 export default BuyBox;
 
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
+ BuyBox;
+
+ 

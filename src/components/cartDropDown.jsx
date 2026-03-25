@@ -72,8 +72,5 @@ const CartDropdown = ({ isOpen, onClose }) => {
   );
 };
 
-<<<<<<< HEAD
+
 export default CartDropdown;
-=======
-export default CartDropdown;
->>>>>>> 27f5083 (feat: setup inicial com carrossel animado e correções de layout)
