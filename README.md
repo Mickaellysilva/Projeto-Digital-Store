@@ -1,61 +1,201 @@
-# 🛍️ Digital Store - Front-end
+# 🛍️ Digital Store
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
-
-Este é o projeto de interface da **Digital Store**, uma plataforma de e-commerce moderna e responsiva. O objetivo principal é oferecer uma experiência de compra fluida, com foco em performance e design fiel ao protótipo do Figma.
+Projeto de uma loja virtual desenvolvido com **React.js**, com foco em componentização, organização e boas práticas de front-end.
 
 ---
 
-## Funcionalidades
+## Sobre o Projeto
 
-* **Página de Produtos**: Listagem dinâmica com filtros.
-* **Carrinho de Compras**: Gestão de itens em tempo real.
-* **Busca Inteligente**: Filtro de produtos por nome ou categoria.
-* **Design Responsivo**: Totalmente adaptado para dispositivos móveis e desktop.
-* **Checkout**: Fluxo de finalização de compra intuitivo.
+A **Digital Store** é uma aplicação web que simula uma loja virtual completa, permitindo:
+
+- Visualização de produtos  
+- Filtro e ordenação  
+- Página de detalhes do produto  
+- Interface moderna e responsiva  
+- Navegação entre páginas  
+
 
 ## Tecnologias Utilizadas
 
-* **React.js**: Biblioteca principal para construção de componentes.
-* **Tailwind CSS**: Estilização baseada em utilitários para agilidade.
-* **Vite**: Ferramenta de build extremamente rápida.
-* **React Router**: Gerenciamento de rotas da aplicação.
-* **Context API**: Para gerenciamento de estado global (como o carrinho).
+- React.js  
+- React Router DOM  
+- JavaScript (ES6+)  
+- HTML5  
+- CSS3  
 
----
+## Estrutura de Pastas
 
-## Como Executar o Projeto
+src/
+├── components/
+│ ├── Header/
+│ ├── Footer/
+│ ├── Logo/
+│ ├── ProductListing/
+│ ├── ProductCard/
+│ ├── ProductOptions/
+│ ├── BuyBox/
+│ ├── Section/
+│ ├── FilterGroup/
+│ └── Gallery/
+│
+├── pages/
+│ ├── HomePage/
+│ ├── ProductListingPage/
+│ └── ProductViewPage/
+│
+├── assets/
+├── App.js
+└── index.js
 
-### 1. Clonar o repositório
+## 🎨 Paleta de Cores
+
+### Cores principais
+
+- Primary: `#C92071`  
+- Secondary: `#B5B6F2`  
+- Tertiary: `#991956`  
+
+### Feedback
+
+- Error: `#EE4266`  
+- Success: `#52CA76`  
+- Warning: `#F6AA1C`  
+
+### Escala de Cinza
+
+- Dark Gray: `#1F1F1F`  
+- Dark Gray 2: `#474747`  
+- Dark Gray 3: `#666666`  
+- Light Gray: `#8F8F8F`  
+- Light Gray 2: `#CCCCCC`  
+- Light Gray 3: `#F5F5F5`  
+- White: `#FFFFFF`  
+
+
+## Componentes
+
+### Layout
+Responsável por estruturar as páginas com:
+
+- `<Header />`
+- Conteúdo (`children`)
+- `<Footer />`
+
+### Header
+- Logo  
+- Campo de busca  
+- Login / Cadastro  
+- Carrinho  
+- Navegação principal  
+
+### Footer
+- Logo  
+- Descrição  
+- Redes sociais  
+- Links dinâmicos  
+- Direitos autorais  
+
+### Section
+Componente reutilizável com:
+- Título  
+- Alinhamento  
+- Link opcional  
+- Conteúdo dinâmico  
+
+### ProductCard
+Exibe:
+- Imagem  
+- Nome  
+- Preço  
+- Desconto  
+
+### ProductListing
+Lista vários produtos usando `<ProductCard />`
+
+### Gallery
+Carrossel com:
+- Navegação por setas  
+- Miniaturas (opcional)  
+- Slides interativos  
+
+### FilterGroup
+- Checkbox ou radio  
+- Renderização dinâmica  
+
+### BuyBox
+- Nome  
+- Preço  
+- Avaliações  
+- Descrição  
+- Botão de compra  
+
+### ProductOptions
+- Seleção de cores  
+- Seleção de tamanhos  
+
+## Páginas
+
+### Home (`/`)
+- Banner (Gallery)  
+- Coleções  
+- Produtos em alta  
+
+### Produtos (`/products`)
+- Listagem  
+- Filtros  
+- Ordenação  
+
+### Produto (`/product/:id`)
+- Galeria  
+- Informações  
+- Opções  
+- Produtos recomendados  
+
+### Funcionalidades
+
+- Busca de produtos  
+- Filtros  
+- Ordenação  
+- Galeria interativa  
+- Página detalhada  
+- Navegação com rotas  
+
+## Como Executar
+
+### 1. Clonar repositório
 ```bash
-git clone [https://github.com/Mickaellysilva/Projeto-Digital-Store.git](https://github.com/Mickaellysilva/Projeto-Digital-Store.git)
+git clone https://github.com/seu-usuario/digital-store.git
+```
+```bash
+2. Entrar na pasta
+cd digital-store
+```
+```bash
+3. Instalar dependências
+npm install
+```
+```bash
+4. Rodar projeto
+npm start
 ```
 
-### 2. Instalar as dependências
-Bash
-npm install
-### 3. Configurar a conexão com o Back-end
-Crie um arquivo .env na raiz e adicione a URL da sua API:
+### Rotas
+/ → Home
+/products → Listagem
+/product/:id → Detalhes
 
-Snippet de código
-VITE_API_URL=http://localhost:3000
+## Boas Práticas
+* Componentização
+* Reutilização
+* Código organizado
+* Estrutura escalável
+  
+### Imagens
 
+Localizadas em:
+public/
+src/assets/
 
-### 4. Rodar o projeto
-Bash
-npm run dev
-Acesse http://localhost:5173 no seu navegador.
-
-###  Design
-O layout foi baseado na documentação oficial e no design do Figma proposto pelo programa Geração Tech.
-
-##  Autoria
-
-- Projeto acadêmico - Geração Tech  
-- Foco em desenvolvimento front-end 
-
-
-Desenvolvido por Kássia Moreira Santos, Mickaelly da Silva Costa e Tatiana dos Santos Lima
-© 2026 Todos os direitos reservados.
+### Autores
+Realizamos nosso projeto junto com a Nazaré Almeida.
+Grupo: Tatiana dos Santos Lima, Mickaelly da Silva Costa e Kassia Moreira Santos.

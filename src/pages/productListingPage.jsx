@@ -3,38 +3,20 @@ import Layout from './layout';
 import Section from '../components/section';
 import ProductListingList from '../components/AbaProdutos/productListingList';
 
-const allProducts = [
-  {
-    id: 1,
-    name: 'K-Swiss V8 - Masculino',
-    image: '/product-thumb-1.png', 
-    price: 200,
-    priceDiscount: 149.9,
-    category: 'cat1',
-  },
-  {
-    id: 2,
-    name: 'Tênis Urban',
-    image: '/product-thumb-2.png',
-    price: 99.9,
-    category: 'cat2',
-  },
-  {
-    id: 3,
-    name: 'Tênis Branco',
-    image: '/product-thumb-3.png',
-    price: 150,
-    category: 'cat1',
-  },
-];
+// 1. IMPORTANTE: Importando a lista oficial de produtos
+import { products as allProducts } from '../data/products'; 
 
 const ProductListingPage = () => {
   const [order, setOrder] = useState('menor-preco');
   const [filters, setFilters] = useState([]);
 
+  // 2. Ajustando as opções de filtro para bater com as categorias do seu products.js
   const categoryOptions = [
-    { text: 'Categoria 1', value: 'cat1' },
-    { text: 'Categoria 2', value: 'cat2' },
+    { text: 'Tênis', value: 'Tênis' },
+    { text: 'Camisetas', value: 'Camisetas' },
+    { text: 'Calças', value: 'Calças' },
+    { text: 'Bonés', value: 'Bonés' },
+    { text: 'Headphones', value: 'Headphones' },
   ];
 
   const handleFilterChange = (value) => {
@@ -45,14 +27,20 @@ const ProductListingPage = () => {
     }
   };
 
+  // Filtra os produtos baseados nas categorias selecionadas
   const filteredProducts = allProducts.filter(product => {
     if (filters.length === 0) return true;
     return filters.includes(product.category);
   });
 
+  // Ordena os produtos por preço
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (order === 'menor-preco') return a.price - b.price;
-    if (order === 'maior-preco') return b.price - a.price;
+    // Usamos priceDiscount se houver, caso contrário usamos price
+    const priceA = a.priceDiscount || a.price;
+    const priceB = b.priceDiscount || b.price;
+
+    if (order === 'menor-preco') return priceA - priceB;
+    if (order === 'maior-preco') return priceB - priceA;
     return 0;
   });
 
