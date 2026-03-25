@@ -1,14 +1,18 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoShirtOutline } from "react-icons/io5";
 import { PiBaseballCapLight, PiHeadphonesLight, PiPantsLight } from "react-icons/pi";
 import { GiConverseShoe } from "react-icons/gi";
 import { FaArrowLeft } from "react-icons/fa";
 
+// Importando os componentes necessários
 import Section from '../components/section';
 import Hero from '../components/hero';
 import ProductListing from '../components/HomePage/productListing';
 import airJordanImg from '../assets/Laye 1.png';
+
+// IMPORTANTE: Importando a lista oficial de produtos do seu arquivo de dados
+import { products } from '../data/products'; 
 
 const categoryIcons = [
   { icon: <IoShirtOutline size={40} />, label: "Camisetas" },
@@ -18,29 +22,14 @@ const categoryIcons = [
   { icon: <GiConverseShoe size={40} />, label: "Tênis" },
 ];
 
-const productsData = [
-  { id: 1, name: "Nike Air Max 270", image: "https://images.tcdn.com.br/img/img_prod/740066/tenis_nike_air_max_270_react_optical_preto_cinza_389_1_20200120160045.jpg", price: 200, priceDiscount: 149.9, category: "Tênis" },
-  { id: 2, name: "Adidas Ultraboost", image: "https://authenticfeet.vtexassets.com/arquivos/ids/434723-800-800?v=638562278565370000&width=800&height=800&aspect=true", price: 200, category: "Tênis", priceDiscount: 180 },
-  { id: 3, name: "Puma RS-X", image: "https://a-static.mlcdn.com.br/800x560/tenis-puma-rs-x-3d-masculino/b2online/3943110242/53502c5bb7a4aca0addb96f6ac8635a6.jpeg", price: 99.9, category: "Tênis", priceDiscount: 89.9 },
-  { id: 4, name: "New Balance 574", image: "https://cdn.bnws3.com.br/b2online.com.br/image/cache/data/produtos/new-balance/masculino/tenis-new-balance-574-v2-masculino-vinho---cinza-8784-24-01-24-00-1200x1200.jpg", price: 150, category: "Tênis", priceDiscount: 120 },
-  { id: 5, name: "Asics Gel-Kayano", image: "https://asicsbr.vteximg.com.br/arquivos/ids/2744214-1000-1000/null.jpg", price: 75, category: "Tênis" },
-  { id: 6, name: "Reebok Classic Leather", image: "https://static.hupishop.com.br/public/hupibikes/imagens/produtos/tenis-reebok-classic-nylon-bege-feminino-667d9a2cdd458.jpg", price: 30, category: "Tênis" },
-  { id: 7, name: "Vans Old Skool", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzBJ4a69-eDi4bOCihhjxFyiC9WWKC9krq3A&s", price: 200, priceDiscount: 180, category: "Tênis" },
-  { id: 8, name: "Converse Chuck Taylor", image: "https://cloviscalcados.vteximg.com.br/arquivos/ids/1036233-1024-1024/Tenis-Masculino-Chuck-Taylor-Converse-All-Star-CT00040007-0320004_001-02.jpg?v=638364710577700000", price: 250, category: "Tênis" },
-  { id: 9, name: "Camisa Joy Division", image: "https://stamp.jetassets.com.br/produto/TS1722_2024-09-19_14_33_09_0.jpeg", price: 100, category: "Camisetas" },
-  { id: 10, name: "Calça Mom Jeans", image: "https://oqvestir.fbitsstatic.net/img/p/calca-feminina-mom-jeans-azul-178657/463134.jpg?w=1600&h=2133&v=202501231556", price: 400, category: "Calças" },
-  { id: 11, name: "Boné MST", image: "https://http2.mlstatic.com/D_NQ_NP_662323-MLB78900818559_092024-O-bone-mst-brim-6-gomos-adulto.webp", price: 200, category: "Bonés" },
-  { id: 12, name: "Headphone JBL", image: "https://m.media-amazon.com/images/I/61BDf8KO8AL.__AC_SX300_SY300_QL70_ML2_.jpg", price: 299, category: "Headphones" },
-];
-
 const HomePage = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  // Filtramos os produtos baseados na categoria selecionada
+  // Filtramos os produtos baseados na categoria selecionada usando a lista importada
   const filteredProducts = useMemo(() => {
-    if (!selectedCategory) return productsData;
-    return productsData.filter(product => product.category === selectedCategory);
+    if (!selectedCategory) return products;
+    return products.filter(product => product.category === selectedCategory);
   }, [selectedCategory]);
 
   const handleCategoryClick = (categoryLabel) => {
@@ -109,7 +98,7 @@ const HomePage = () => {
           )}
         </Section>
 
-        {/* Listagem de Produtos Filtrados */}
+        {/* Listagem de Produtos Filtrados - Agora usando a lista sincronizada */}
         <Section title={selectedCategory ? `Produtos em ${selectedCategory}` : "Produtos em alta"}>
           <ProductListing products={filteredProducts} />
         </Section>
